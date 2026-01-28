@@ -5,18 +5,20 @@ import { VitePWA } from 'vite-plugin-pwa';
 export default defineConfig({
   plugins: [
     react(),
+    // Disable SW generation to avoid "Dynamic require of workbox-build" in ESM. Manifest only.
     VitePWA({
+      disable: true,
       registerType: 'autoUpdate',
-      workbox: { globPatterns: ['**/*.{js,css,html,ico,png,svg,woff2}'] },
       manifest: {
         name: 'ניהול בית',
         short_name: 'ניהול בית',
-        theme_color: '#3b82f6',
-        background_color: '#f8fafc',
+        theme_color: '#2563eb',
+        background_color: '#f1f5f9',
         display: 'standalone',
         start_url: './index.html',
       },
     }),
   ],
-  base: './',
+  // Required for GitHub Pages: https://buskilz4289.github.io/Home-Management/
+  base: '/Home-Management/',
 });
