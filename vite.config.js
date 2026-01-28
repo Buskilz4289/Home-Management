@@ -5,7 +5,7 @@ import { VitePWA } from 'vite-plugin-pwa';
 export default defineConfig({
   plugins: [
     react(),
-    // Disable SW generation to avoid "Dynamic require of workbox-build" in ESM. Manifest only.
+    // disable: true avoids "Dynamic require of workbox-build" in ESM. Use public/manifest.webmanifest for PWA metadata.
     VitePWA({
       disable: true,
       registerType: 'autoUpdate',
@@ -19,6 +19,5 @@ export default defineConfig({
       },
     }),
   ],
-  // Required for GitHub Pages: https://buskilz4289.github.io/Home-Management/
   base: '/Home-Management/',
 });
