@@ -23,5 +23,6 @@ export default defineConfig({
       },
     }),
   ],
+  // Must be /RepoName/ for GitHub Pages: https://buskilz4289.github.io/Home-Management/
   base: '/Home-Management/',
 })
